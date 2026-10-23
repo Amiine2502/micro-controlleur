@@ -1,0 +1,11 @@
+# Keil build outputs
+Projet/Objects/
+Projet/Listings/
+
+# Keil user interface settings
+Projet/*.uvguix.*
+
+# Temporary files 
+*.bak
+*.tmp
+*.dep
