@@ -31,8 +31,7 @@ void InitGPIO(GPIO_TypeDef *PORT, char BROCHE, char CONFIG){
 			PORT -> CRL |= 0x0<<4*BROCHE;
 		}	
 	}
-	
-	if(BROCHE < 16){
+	if (BROCHE < 8) {
 		if(CONFIG == OUTPUTPUSHPULL){
 			PORT -> CRH &= ~(0xF<<4*BROCHE);
 			PORT -> CRH |= 0x1<<4*BROCHE;
@@ -50,8 +49,26 @@ void InitGPIO(GPIO_TypeDef *PORT, char BROCHE, char CONFIG){
 			PORT -> CRH |= 0x0<<4*BROCHE;
 		}	
 	}
-}
+	else if(BROCHE < 16){
+				if(CONFIG == OUTPUTPUSHPULL){
+			PORT -> CRH &= ~(0xF<<4*BROCHE);
+			PORT -> CRH |= 0x1<<4*BROCHE;
+		}
+		if(CONFIG == OUTPUTALTERNATEPUSHPULL){
+			PORT -> CRH &= ~(0xF<<4*( BROCHE - 8));
+			PORT -> CRH |= 0x9<<4*(BROCHE - 8);
+		}
+		if(CONFIG == INPOUTFLOATING){
+			PORT -> CRH &= ~(0xF<<(4*(BROCHE - 8)));
+			PORT -> CRH |= (0x4<<(4*(BROCHE - 8)));
+		}
+		if(CONFIG == INPOUTANALOG){
+			PORT -> CRH &= ~(0xF<<(4*(BROCHE - 8)));
+			PORT -> CRH |= (0x0<<(4*(BROCHE - 8)));
+		}	
+	}
 
+}
 
 char LireBroche(GPIO_TypeDef *PORT, char BROCHE){
 	if((PORT -> IDR & (1<<BROCHE)) == 0){

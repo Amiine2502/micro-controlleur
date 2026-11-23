@@ -414,6 +414,16 @@
               <FileType>5</FileType>
               <FilePath>.\Drivers\Pilote_Timer.h</FilePath>
             </File>
+            <File>
+              <FileName>Pilote_PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\Pilote_PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\Pilote_PWM.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -831,6 +841,16 @@
               <FileName>Pilote_Timer.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Drivers\Pilote_Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\Pilote_PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>Pilote_PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\Pilote_PWM.c</FilePath>
             </File>
           </Files>
         </Group>
